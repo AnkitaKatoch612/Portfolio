@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ankita Katoch, a Full Stack Developer focused on MERN applications, scalable REST APIs, and workflow automation with Chrome extensions.">
+    <meta name="keywords" content="Ankita Katoch, Full Stack Developer, MERN, React, Node.js, Portfolio, REST API, Chrome Extension">
+    <meta name="author" content="Ankita Katoch">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ankita Katoch | Full Stack Developer">
+    <meta property="og:description" content="Building scalable web applications, secure APIs, and productivity-focused automation tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ankita Katoch | Full Stack Developer">
+    <meta name="twitter:description" content="Full Stack Developer specializing in MERN, Next.js, and enterprise tooling.">
+    <link rel="canonical" href="https://ankitakatoch.dev">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Ankita Katoch | MERN Stack Full Stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ankita Katoch",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://ankitakatoch.dev",
+      "sameAs": [
+        "https://linkedin.com/in/ankita-katoch-7908b8217",
+        "https://github.com/AnkitaKatoch612"
+      ],
+      "knowsAbout": ["JavaScript", "React", "Node.js", "Express.js", "MongoDB", "REST APIs"]
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc; 
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #38bdf8, #818cf8);
+            border-radius: 10px;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-shape:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .bg-shape:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 5s;
+        }
+
+        .bg-shape:nth-child(3) {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -100px) rotate(90deg); }
+            50% { transform: translate(-100px, 100px) rotate(180deg); }
+            75% { transform: translate(100px, 100px) rotate(270deg); }
+        }
+
+        /* Glass Morphism */
+        .glass { 
+            background: rgba(30, 41, 59, 0.5); 
+            backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-strong {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Gradient Text */
+        .gradient-text { 
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc); 
+            background-size: 200% auto;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Navigation */
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover { 
+            color: #38bdf8; 
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Hero Section */
+        .hero-title {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-description {
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typing Effect */
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Stats Counter */
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* Skills Section */
+        .skill-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Project Cards */
+        .project-card { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+        }
+
+        .project-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-color: #38bdf8; 
+            box-shadow: 0 20px 50px rgba(56, 189, 248, 0.25); 
+        }
+
+        .project-link {
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #38bdf8;
+            transform: translateX(5px);
+        }
+
+        /* Timeline */
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+        }
+
+        .timeline-content {
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateX(10px);
+        }
+
+        /* Certifications */
+        .cert-card {
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: rotate(2deg) scale(1.05);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(56, 189, 248, 0.1);
+            border-color: #38bdf8;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Code Block */
+        .code-block {
+            font-family: 'Fira Code', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #38bdf8;
+        }
+
+        /* Floating Animation */
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Particle Effect */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.3);
+            pointer-events: none;
+            animation: particle-float 4s ease-in-out infinite;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+        }
+
+        /* Responsive Design Improvements */
+        @media (max-width: 768px) {
+            .bg-shape { filter: blur(60px); }
+            .hero-title { font-size: 2.5rem; }
+            .project-card:hover { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300" aria-label="Primary navigation">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">&lt;AK/&gt;</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="mailto:katochankita612@gmail.com" class="btn-primary px-6 py-2 rounded-full text-white relative z-10" aria-label="Hire me via email">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 glass-strong md:hidden p-8 z-50">
+            <button id="closeMobileMenu" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex flex-col space-y-6 mt-16 text-lg font-medium">
+                <a href="#about" class="nav-link mobile-nav-link">About</a>
+                <a href="#skills" class="nav-link mobile-nav-link">Skills</a>
+                <a href="#projects" class="nav-link mobile-nav-link">Projects</a>
+                <a href="#experience" class="nav-link mobile-nav-link">Experience</a>
+                <a href="#contact" class="nav-link mobile-nav-link">Contact</a>
+                <a href="mailto:katochankita612@gmail.com" class="btn-primary px-6 py-3 rounded-full text-white text-center" aria-label="Hire me via email">
+                    Hire Me
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+            <div class="text-center max-w-5xl mx-auto relative z-10">
+                <div class="mb-6 floating">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">👋 Welcome to my portfolio</span>
+                </div>
+                <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+                    Hi, I'm <span class="gradient-text">Ankita Katoch</span>
+                </h1>
+                <h2 class="hero-subtitle text-2xl md:text-4xl font-semibold mb-6 text-gray-300">
+                    <span class="typing-text" id="typingText">Full Stack Developer</span>
+                </h2>
+                <p class="hero-description max-w-3xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed mb-10">
+                    Crafting scalable <span class="text-sky-400 font-semibold">MERN stack applications</span>, secure 
+                    <span class="text-purple-400 font-semibold">REST APIs</span>, and enterprise-grade 
+                    <span class="text-cyan-400 font-semibold">automation tools</span>. Turning complex problems into elegant solutions.
+                </p>
+                <div class="hero-buttons flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#projects" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg relative z-10">
+                        <i class="fas fa-rocket mr-2"></i>View My Work
+                    </a>
+                    <a href="#contact" class="btn-outline px-8 py-4 rounded-full font-semibold text-lg">
+                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    </a>
+                    <a href="resume/ANKITA_KATOCH_Resume_updated.pdf" download="Ankita_Katoch_Resume.pdf" class="btn-outline px-8 py-4 rounded-full font-semibold text-lg" aria-label="Download resume">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </a>
+                    <a href="https://github.com/AnkitaKatoch612" target="_blank" rel="noopener noreferrer" class="btn-outline px-8 py-4 rounded-full font-semibold text-lg">
+                        <i class="fab fa-github mr-2"></i>View GitHub
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mt-12">
+                    <a href="https://linkedin.com/in/ankita-katoch-7908b8217" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/AnkitaKatoch612" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="GitHub">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a href="mailto:katochankita612@gmail.com" class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="Email Ankita Katoch">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-sky-400" aria-label="Scroll down">
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-slate-900/30">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div class="stat-card glass p-8 rounded-2xl text-center">
+                        <div class="text-4xl font-bold gradient-text mb-2 stat-number" data-count="2">0+</div>
+                        <div class="text-gray-400 text-sm">Years Experience</div>
+                    </div>
+                    <div class="stat-card glass p-8 rounded-2xl text-center">
+                        <div class="text-4xl font-bold gradient-text mb-2 stat-number" data-count="9">0+</div>
+                        <div class="text-gray-400 text-sm">Projects Completed</div>
+                    </div>
+                    <div class="stat-card glass p-8 rounded-2xl text-center">
+                        <div class="text-4xl font-bold gradient-text mb-2 stat-number" data-count="30">0+</div>
+                        <div class="text-gray-400 text-sm">REST APIs Built</div>
+                    </div>
+                    <div class="stat-card glass p-8 rounded-2xl text-center">
+                        <div class="text-4xl font-bold gradient-text mb-2 stat-number" data-count="3">0+</div>
+                        <div class="text-gray-400 text-sm">Chrome Extensions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Get to know me</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">About <span class="gradient-text">Me</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-strong p-10 rounded-3xl">
+                        <h4 class="text-2xl font-bold mb-6 gradient-text">Full Stack Developer & Problem Solver</h4>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            With over <span class="text-sky-400 font-semibold">2+ years of professional experience</span>, 
+                            I specialize in building high-performance web applications that solve real business problems. 
+                            My expertise spans the entire development lifecycle—from database design to CI/CD deployment.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Currently at <span class="text-sky-400 font-semibold">SysTools Software</span>, I've architected 
+                            <span class="text-purple-400 font-semibold">enterprise HRMS systems</span>, 
+                            developed <span class="text-cyan-400 font-semibold">Cyber Case Management platforms</span>, and created 
+                            productivity-boosting <span class="text-pink-400 font-semibold">Chrome extensions</span> that automate complex workflows 
+                            and save teams countless hours.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            I hold an <span class="text-sky-400 font-semibold">MCA with Distinction</span> and am certified in 
+                            <span class="text-purple-400 font-semibold">Full Stack Development (MERN)</span> and 
+                            <span class="text-cyan-400 font-semibold">Python + AI/ML</span>.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mt-8">
+                            <span class="px-4 py-2 bg-sky-900/30 text-sky-300 rounded-full text-sm">MERN Stack Expert</span>
+                            <span class="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-full text-sm">REST API Architect</span>
+                            <span class="px-4 py-2 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Extension Developer</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="glass p-6 rounded-2xl border-l-4 border-sky-500 hover:bg-sky-900/10 transition-all">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-lightbulb text-3xl text-sky-400 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2">Scalable Architecture</h5>
+                                    <p class="text-gray-400 text-sm">Designing MERN applications serving 200+ enterprise users with role-based access control and real-time analytics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass p-6 rounded-2xl border-l-4 border-purple-500 hover:bg-purple-900/10 transition-all">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-shield-alt text-3xl text-purple-400 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2">Security First</h5>
+                                    <p class="text-gray-400 text-sm">Building 30+ secure REST APIs with JWT authentication, RBAC, and comprehensive error handling.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass p-6 rounded-2xl border-l-4 border-cyan-500 hover:bg-cyan-900/10 transition-all">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-rocket text-3xl text-cyan-400 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2">Performance Optimized</h5>
+                                    <p class="text-gray-400 text-sm">Implementing CI/CD with GitHub Actions, reducing deployment time by 60% and optimizing database queries.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 bg-slate-900/30 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">My expertise</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Technical <span class="gradient-text">Arsenal</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    <div class="skill-card glass p-8 rounded-2xl border border-transparent hover:border-sky-500">
+                        <div class="text-4xl mb-4 text-sky-400">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-sky-400">Frontend Development</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-sky-400"></i> React.js & Hooks
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-sky-400"></i> Context API & Redux
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-sky-400"></i> Responsive Design
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-sky-400"></i> Material UI & Bootstrap
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-sky-400"></i> Chart.js Visualizations
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card glass p-8 rounded-2xl border border-transparent hover:border-purple-500">
+                        <div class="text-4xl mb-4 text-purple-400">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-purple-400">Backend Development</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-purple-400"></i> Node.js & Express.js
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-purple-400"></i> REST API Design
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-purple-400"></i> JWT Authentication
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-purple-400"></i> Middleware & RBAC
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-purple-400"></i> File Upload (Multer)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card glass p-8 rounded-2xl border border-transparent hover:border-cyan-500">
+                        <div class="text-4xl mb-4 text-cyan-400">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-cyan-400">Database & Storage</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-cyan-400"></i> MongoDB & Mongoose
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-cyan-400"></i> MySQL & SQL Queries
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-cyan-400"></i> Database Design
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-cyan-400"></i> Query Optimization
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-cyan-400"></i> CRUD Operations
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card glass p-8 rounded-2xl border border-transparent hover:border-pink-500">
+                        <div class="text-4xl mb-4 text-pink-400">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-4 text-pink-400">DevOps & Tools</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-pink-400"></i> Git & GitHub
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-pink-400"></i> GitHub Actions CI/CD
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-pink-400"></i> Postman API Testing
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-pink-400"></i> Chrome DevTools
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-pink-400"></i> Performance Monitoring
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div class="mt-12 max-w-5xl mx-auto glass p-8 rounded-2xl">
+                    <h4 class="text-xl font-bold mb-6 text-center">Tech Stack Proficiency</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        <div class="text-center group">
+                            <i class="fab fa-js text-5xl text-yellow-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">JavaScript</p>
+                        </div>
+                        <div class="text-center group">
+                            <i class="fab fa-react text-5xl text-cyan-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">React</p>
+                        </div>
+                        <div class="text-center group">
+                            <i class="fab fa-node text-5xl text-green-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">Node.js</p>
+                        </div>
+                        <div class="text-center group">
+                            <i class="fas fa-database text-5xl text-green-600 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">MongoDB</p>
+                        </div>
+                        <div class="text-center group">
+                            <i class="fab fa-git-alt text-5xl text-orange-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">Git</p>
+                        </div>
+                        <div class="text-center group">
+                            <i class="fab fa-chrome text-5xl text-blue-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <p class="text-sm text-gray-400">Extensions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Portfolio showcase</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Featured <span class="gradient-text">Projects</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Real-world applications demonstrating expertise in full-stack development, API architecture, and automation.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-[1400px] mx-auto">
+                    
+                    <!-- Project 1 -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">Work Monitoring System</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-sky-900/40 text-sky-300 px-3 py-1 rounded-full whitespace-nowrap">Enterprise Application</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Production-grade workforce platform with secure login, real-time activity visibility, productivity analytics, and role-based controls for enterprise operations.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-chart-line"></i> 
+                                <span>Enterprise Tool, Analytics, Real-time Tracking</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">React</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Node.js</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">MongoDB</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Chart.js</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://app.workdesq.ai/login" target="_blank" rel="noopener noreferrer" aria-label="Open Work Monitoring System live app" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Live App
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">Cyber Case Management (CaseCops)</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-purple-900/40 text-purple-300 px-3 py-1 rounded-full whitespace-nowrap">Enterprise Application</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Enterprise-ready cyber investigation suite with structured case workflows, searchable evidence records, incident timelines, and report-ready documentation.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-shield-alt"></i> 
+                                <span>Enterprise Tool, Case Tracking, Evidence Management</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Express</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">MongoDB</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">REST API</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JWT</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://casecops.com/" target="_blank" rel="noopener noreferrer" aria-label="Open CaseCops live app" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Live App
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">HRMS Portal</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-cyan-900/40 text-cyan-300 px-3 py-1 rounded-full whitespace-nowrap">Enterprise Application</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Enterprise HR platform supporting attendance governance, leave workflows, payroll integration, and role-aware employee self-service features.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-users"></i> 
+                                <span>Enterprise Tool, Attendance, Payroll Workflows</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">MERN</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JWT</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">RBAC</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://sys.tools/hrms/" target="_blank" rel="noopener noreferrer" aria-label="Open HRMS Portal live app" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Live App
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">QuizBuddy</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-pink-900/40 text-pink-300 px-3 py-1 rounded-full whitespace-nowrap">Enterprise Application</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Production-focused assessment platform with scalable quiz delivery, live analytics, question orchestration, and performance reporting dashboards.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-poll"></i> 
+                                <span>Enterprise Tool, Live Polling, Analytics Dashboard</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Chart.js</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JWT</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">React</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <span class="project-link text-sm text-sky-400 flex items-center gap-1"><i class="fas fa-briefcase"></i> Enterprise Tool</span>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 - Featured Extension -->
+                    <article class="project-card glass p-6 rounded-2xl border-2 border-sky-500 flex flex-col h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-sky-500 text-white text-xs px-3 py-1 rounded-bl-lg font-semibold">
+                            <i class="fas fa-star mr-1"></i>Featured
+                        </div>
+                        <div class="flex items-start justify-between gap-3 mb-4 mt-4">
+                            <h4 class="text-xl font-bold text-sky-400">ChatGuard Extension</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-sky-900/40 text-sky-300 px-3 py-1 rounded-full whitespace-nowrap">Chrome Extension</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Chrome extension built for privacy-first operations on WhatsApp Web, with intelligent masking, safer screen visibility, and streamlined on-page controls.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-lock"></i> 
+                                <span>Privacy Protection, DOM Manipulation</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-sky-900/30 px-3 py-1 rounded-full">Chrome API</span>
+                                <span class="text-xs bg-sky-900/30 px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-sky-900/30 px-3 py-1 rounded-full">DOM</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-sky-700">
+                            <a href="https://chromewebstore.google.com/search/ChatGuard%20for%20WhatsApp%20Web" target="_blank" rel="noopener noreferrer" aria-label="Open ChatGuard extension on Chrome Web Store" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Chrome Store
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 - Premium Keyword Wizard -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">Premium Keywords Wizard</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-purple-900/40 text-purple-300 px-3 py-1 rounded-full whitespace-nowrap">Chrome Extension</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Advanced SEO extension for production workflows, capturing high-value SERP insights and exporting structured keyword datasets for campaign planning.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-search"></i> 
+                                <span>SERP Analysis, Data Export, Automation</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Chrome API</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">CSV Export</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://chromewebstore.google.com/detail/Premium%20Keywords%20Wizard/pdbjdedkadfmjlebgokdpaelkphllghf" target="_blank" rel="noopener noreferrer" aria-label="Open Premium Keywords Wizard on Chrome Web Store" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Chrome Store
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 7 - LinkedIn Link Extractor -->
+                    <article class="project-card glass p-6 rounded-2xl border-l-4 border-purple-500 flex flex-col h-full relative overflow-hidden">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold text-purple-400">LinkedIn Link Extractor</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-blue-900/40 text-blue-300 px-3 py-1 rounded-full whitespace-nowrap">Chrome Extension</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Production automation extension that captures LinkedIn article and profile links into clean datasets for recruitment research and outreach operations.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fab fa-linkedin"></i> 
+                                <span>URL Extraction, CSV Reports, Automation</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-blue-900/30 px-3 py-1 rounded-full">Chrome API</span>
+                                <span class="text-xs bg-blue-900/30 px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-blue-900/30 px-3 py-1 rounded-full">CSV</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-blue-700">
+                            <a href="https://chromewebstore.google.com/detail/linkedin-article-extracto/nedefcfflbiimhcjeihmjjcckgdndmae" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn Link Extractor on Chrome Web Store" class="project-link text-sm text-purple-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Chrome Store
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 8 - MSG Viewer Extension -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">MSG Viewer Extension</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-blue-900/40 text-blue-300 px-3 py-1 rounded-full whitespace-nowrap">Chrome Extension</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            Secure browser extension for opening and reviewing MSG email files online with structured metadata rendering and quick file-access workflow.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-envelope-open-text"></i> 
+                                <span>Email File Parsing, Metadata View, Productivity</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Chrome API</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">MSG</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">File Viewer</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://chromewebstore.google.com/detail/online-email-viewer-for-m/jdfkokkjhflfamoapkkjfominfggcfoi" target="_blank" rel="noopener noreferrer" aria-label="Open MSG Viewer Extension on Chrome Web Store" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Chrome Store
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 9 - EML Viewer Extension -->
+                    <article class="project-card glass p-6 rounded-2xl flex flex-col h-full border border-transparent relative">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h4 class="text-xl font-bold">EML Viewer Extension</h4>
+                            <span class="text-[10px] uppercase tracking-wider bg-cyan-900/40 text-cyan-300 px-3 py-1 rounded-full whitespace-nowrap">Chrome Extension</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+                            High-utility Chrome extension for viewing EML files directly in-browser with clear content rendering and efficient email review workflow.
+                        </p>
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                <i class="fas fa-envelope"></i> 
+                                <span>Email Content View, Attachment Context, Productivity</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">Chrome API</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">EML</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-full">File Viewer</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 mt-auto pt-4 border-t border-gray-700">
+                            <a href="https://chromewebstore.google.com/detail/online-email-viewer-for-e/ljmgfdnonacpfkppeiainndjckfhmagk" target="_blank" rel="noopener noreferrer" aria-label="Open EML Viewer Extension on Chrome Web Store" class="project-link text-sm text-sky-400 hover:underline flex items-center gap-1 cursor-pointer relative z-10">
+                                <i class="fas fa-external-link-alt"></i> Chrome Store
+                            </a>
+                            <span class="project-link text-sm text-gray-400 flex items-center gap-1"><i class="fas fa-lock"></i> Private Enterprise Project</span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="text-center mt-12">
+                    <a href="https://github.com/AnkitaKatoch612" target="_blank" rel="noopener noreferrer" 
+                       class="btn-outline px-8 py-4 rounded-full font-semibold inline-block">
+                        <i class="fab fa-github mr-2"></i>View All Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 bg-slate-900/30 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Career journey</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Work <span class="gradient-text">Experience</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-12 border-l-2 border-sky-500">
+                        <div class="timeline-dot absolute w-5 h-5 bg-sky-500 rounded-full -left-[10.5px] top-0 shadow-lg shadow-sky-500/50"></div>
+                        <div class="timeline-content glass p-8 rounded-2xl hover:border-sky-500 border border-transparent transition-all">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                <div>
+                                    <h4 class="text-2xl font-bold gradient-text">Full Stack Developer</h4>
+                                    <p class="text-sky-400 font-semibold mt-1">SysTools Software Pvt Ltd, Dwarka</p>
+                                </div>
+                                <span class="bg-sky-900/30 text-sky-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                                    <i class="fas fa-calendar-alt mr-2"></i>July 2024 - Present
+                                </span>
+                            </div>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-sky-400 mt-1 flex-shrink-0"></i>
+                                    <span>Architected and deployed HRMS and Cyber Case Management systems using MERN stack, serving 200+ enterprise users</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-sky-400 mt-1 flex-shrink-0"></i>
+                                    <span>Designed 30+ RESTful APIs with JWT authentication and role-based access control, ensuring secure data access</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-sky-400 mt-1 flex-shrink-0"></i>
+                                    <span>Built interactive dashboards with Chart.js displaying real-time analytics and KPIs for management decision-making</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-sky-400 mt-1 flex-shrink-0"></i>
+                                    <span>Developed Chrome Extensions using JavaScript and DOM manipulation, automating workflows and saving 15+ hours weekly</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-sky-400 mt-1 flex-shrink-0"></i>
+                                    <span>Implemented CI/CD pipeline with GitHub Actions, reducing deployment time by 60% and minimizing production errors</span>
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-6">
+                                <span class="text-xs bg-sky-900/30 text-sky-300 px-3 py-1 rounded-full">MERN Stack</span>
+                                <span class="text-xs bg-sky-900/30 text-sky-300 px-3 py-1 rounded-full">REST APIs</span>
+                                <span class="text-xs bg-sky-900/30 text-sky-300 px-3 py-1 rounded-full">Chrome Extensions</span>
+                                <span class="text-xs bg-sky-900/30 text-sky-300 px-3 py-1 rounded-full">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-12 border-l-2 border-purple-500">
+                        <div class="timeline-dot absolute w-5 h-5 bg-purple-500 rounded-full -left-[10.5px] top-0 shadow-lg shadow-purple-500/50"></div>
+                        <div class="timeline-content glass p-8 rounded-2xl hover:border-purple-500 border border-transparent transition-all">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-purple-400">Full Stack Intern</h4>
+                                    <p class="text-purple-400 font-semibold mt-1">SysTools Software Pvt Ltd</p>
+                                </div>
+                                <span class="bg-purple-900/30 text-purple-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Apr 2024 - Jun 2024
+                                </span>
+                            </div>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-purple-400 mt-1 flex-shrink-0"></i>
+                                    <span>Assisted in backend API development using Node.js and Express.js for internal management tools</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-purple-400 mt-1 flex-shrink-0"></i>
+                                    <span>Implemented comprehensive CRUD operations with MongoDB and MySQL database integration</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-purple-400 mt-1 flex-shrink-0"></i>
+                                    <span>Performed extensive API testing using Postman and debugged application issues to ensure reliability</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-12 border-l-2 border-cyan-500">
+                        <div class="timeline-dot absolute w-5 h-5 bg-cyan-500 rounded-full -left-[10.5px] top-0 shadow-lg shadow-cyan-500/50"></div>
+                        <div class="timeline-content glass p-8 rounded-2xl hover:border-cyan-500 border border-transparent transition-all">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-cyan-400">MERN Stack Intern</h4>
+                                    <p class="text-cyan-400 font-semibold mt-1">ManthanIT Solutions (Remote)</p>
+                                </div>
+                                <span class="bg-cyan-900/30 text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Feb 2023 - Mar 2024
+                                </span>
+                            </div>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-1 flex-shrink-0"></i>
+                                    <span>Built full-stack web applications featuring authentication, protected routes, and secure user sessions</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-cyan-400 mt-1 flex-shrink-0"></i>
+                                    <span>Developed comprehensive ticket booking system with login, seat selection, payment integration, and database storage</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="py-24 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Academic background</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Education & <span class="gradient-text">Certifications</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Education -->
+                <div class="max-w-5xl mx-auto mb-16">
+                    <h4 class="text-2xl font-bold mb-8 text-center">Education</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="glass p-8 rounded-2xl hover:border-sky-500 border border-transparent transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="text-4xl text-sky-400">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold gradient-text mb-2">Master of Computer Applications (MCA)</h5>
+                                    <p class="text-gray-400 mb-2">Jagannath University</p>
+                                    <p class="text-sky-400 font-semibold">Distinction | May 2024</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass p-8 rounded-2xl hover:border-purple-500 border border-transparent transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="text-4xl text-purple-400">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-purple-400 mb-2">Bachelor of Computer Applications (BCA)</h5>
+                                    <p class="text-gray-400 mb-2">Jagannath University</p>
+                                    <p class="text-purple-400 font-semibold">Graduated | May 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="max-w-5xl mx-auto">
+                    <h4 class="text-2xl font-bold mb-8 text-center">Professional Certifications</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="cert-card glass p-6 rounded-2xl border-l-4 border-sky-500">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-certificate text-3xl text-sky-400 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2">Full Stack Development (MERN)</h5>
+                                    <p class="text-sm text-gray-400 mb-2">VSIT | 2023</p>
+                                    <p class="text-xs text-gray-500">Comprehensive training in MongoDB, Express.js, React.js, and Node.js</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cert-card glass p-6 rounded-2xl border-l-4 border-purple-500">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-certificate text-3xl text-purple-400 mt-1"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg mb-2">Python Programming + AI/ML Basics</h5>
+                                    <p class="text-sm text-gray-400 mb-2">VSIT | 2023</p>
+                                    <p class="text-xs text-gray-500">Fundamentals of Python, Machine Learning, and Artificial Intelligence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="max-w-5xl mx-auto mt-16">
+                    <h4 class="text-2xl font-bold mb-8 text-center">Achievements & Recognition</h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="glass p-6 rounded-2xl text-center hover:border-yellow-500 border border-transparent transition-all">
+                            <div class="text-5xl mb-4">🥈</div>
+                            <h5 class="font-bold mb-2">2nd Place</h5>
+                            <p class="text-sm text-gray-400">Techo-Enhancer Coding Quiz</p>
+                        </div>
+
+                        <div class="glass p-6 rounded-2xl text-center hover:border-yellow-500 border border-transparent transition-all">
+                            <div class="text-5xl mb-4">🥉</div>
+                            <h5 class="font-bold mb-2">3rd Place</h5>
+                            <p class="text-sm text-gray-400">Algofinity Programming Challenge</p>
+                        </div>
+
+                        <div class="glass p-6 rounded-2xl text-center hover:border-sky-500 border border-transparent transition-all">
+                            <div class="text-5xl mb-4">🎓</div>
+                            <h5 class="font-bold mb-2">Workshop Attendee</h5>
+                            <p class="text-sm text-gray-400">SONIC AI/ML & Pythonx ML Bootcamp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-slate-900/30 reveal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Let's connect</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Get In <span class="gradient-text">Touch</span></h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-400 mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Open to exciting opportunities, collaborations, and projects. Let's build something amazing together!
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+                    <a href="mailto:katochankita612@gmail.com" class="contact-card glass p-8 rounded-2xl text-center border border-transparent" aria-label="Email katochankita612@gmail.com">
+                        <div class="text-5xl mb-4 text-sky-400">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Email</h4>
+                        <p class="text-sm text-gray-400 break-all">katochankita612@gmail.com</p>
+                    </a>
+
+                    <a href="https://linkedin.com/in/ankita-katoch-7908b8217" target="_blank" rel="noopener noreferrer" 
+                       class="contact-card glass p-8 rounded-2xl text-center border border-transparent">
+                        <div class="text-5xl mb-4 text-sky-400">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">LinkedIn</h4>
+                        <p class="text-sm text-gray-400">Connect with me</p>
+                    </a>
+
+                    <a href="https://github.com/AnkitaKatoch612" target="_blank" rel="noopener noreferrer" 
+                       class="contact-card glass p-8 rounded-2xl text-center border border-transparent">
+                        <div class="text-5xl mb-4 text-sky-400">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">GitHub</h4>
+                        <p class="text-sm text-gray-400">View my code</p>
+                    </a>
+                </div>
+
+                <!-- Additional Contact Info -->
+                <div class="max-w-2xl mx-auto mt-12 glass p-8 rounded-2xl text-center">
+                    <h4 class="text-xl font-bold mb-4">Contact Information</h4>
+                    <div class="space-y-3 text-gray-300 mb-6">
+                        <p class="flex items-center justify-center gap-3">
+                            <i class="fas fa-map-marker-alt text-sky-400"></i>
+                            <span>Dwarka, New Delhi, India - 110045</span>
+                        </p>
+                        <p class="flex items-center justify-center gap-3">
+                            <i class="fas fa-phone text-sky-400"></i>
+                            <span>+91 9650784039 / +91 7428407739</span>
+                        </p>
+                    </div>
+                 <a href="resume/ANKITA_KATOCH_Resume_updated.pdf" 
+   download="Ankita_Katoch_Resume.pdf"
+   class="btn-primary px-8 py-3 rounded-full font-semibold inline-block relative z-10">
+   <i class="fas fa-download mr-2"></i>Download Resume
+</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-8 mb-6">
+                <a href="https://linkedin.com/in/ankita-katoch-7908b8217" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/AnkitaKatoch612" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="mailto:katochankita612@gmail.com" class="text-gray-400 hover:text-sky-400 transition-all transform hover:scale-110" aria-label="Email Ankita Katoch">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mb-2">
+                &copy; 2026 Ankita Katoch. All rights reserved.
+            </p>
+            <p class="text-gray-600 text-xs">
+                Built with passion using React concepts, Tailwind CSS, and modern web technologies
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-sky-500 hover:bg-sky-600 text-white w-12 h-12 rounded-full shadow-lg hidden items-center justify-center transition-all z-50" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // Progress Bar
+        const progressBar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+            progressBar.style.width = scrollPercentage + '%';
+        }, { passive: true });
+
+        // Typing Effect
+        const typingText = document.getElementById('typingText');
+        const roles = [
+            'Full Stack Developer',
+            'MERN Stack Expert',
+            'API Architect',
+            'Chrome Extension Developer',
+            'Problem Solver'
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            
+            if (!isDeleting && charIndex < currentRole.length) {
+                typingText.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeEffect, 100);
+            } else if (isDeleting && charIndex > 0) {
+                typingText.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeEffect, 50);
+            } else if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeEffect, 500);
+            }
+        }
+
+        typeEffect();
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        let hasAnimated = false;
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let count = 0;
+
+            const updateCount = () => {
+                if (count < target) {
+                    count += increment;
+                    counter.textContent = Math.ceil(count) + '+';
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            };
+
+            updateCount();
+        };
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+
+            // Animate counters when stats section is visible
+            if (!hasAnimated) {
+                const statsSection = document.querySelector('.stat-card');
+                if (statsSection) {
+                    const statsSectionTop = statsSection.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (statsSectionTop < windowHeight - 100) {
+                        hasAnimated = true;
+                        counters.forEach(counter => {
+                            animateCounter(counter);
+                        });
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll, { passive: true });
+        
+        // Initial check on page load
+        setTimeout(() => {
+            revealOnScroll();
+        }, 500);
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+                backToTop.classList.add('flex');
+            } else {
+                backToTop.classList.add('hidden');
+                backToTop.classList.remove('flex');
+            }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Create Particle Effect on Mouse Move
+        let particleTimeout;
+        document.addEventListener('mousemove', (e) => {
+            clearTimeout(particleTimeout);
+            particleTimeout = setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                document.body.appendChild(particle);
+
+                setTimeout(() => {
+                    particle.remove();
+                }, 4000);
+            }, 50);
+        }, { passive: true });
+
+    </script>
+
+</body>
+</html>
