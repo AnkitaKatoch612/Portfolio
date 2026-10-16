@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative LinkedIn link extraction workflow</title>
+  <desc id="desc">A fictional article page beside an extracted links list and CSV export control. No real LinkedIn data or profiles are shown.</desc>
+  <rect width="1000" height="560" rx="25" fill="#eef2f6"/>
+  <rect width="1000" height="50" rx="25" fill="#fff"/>
+  <circle cx="25" cy="25" r="6" fill="#f27872"/><circle cx="44" cy="25" r="6" fill="#efbf62"/><circle cx="63" cy="25" r="6" fill="#60be8c"/>
+  <rect x="330" y="14" width="340" height="22" rx="11" fill="#f4f6f8"/>
+  <text x="500" y="29" text-anchor="middle" font-family="Arial" font-size="10" fill="#8994a4">LINK EXTRACTOR · BROWSER EXTENSION · ILLUSTRATIVE</text>
+  <rect x="29" y="72" width="942" height="440" rx="14" fill="#fff" stroke="#dfe5ec"/>
+  <rect x="29" y="72" width="942" height="48" rx="14" fill="#f8fafc"/>
+  <rect x="53" y="85" width="24" height="24" rx="5" fill="#dce8f5"/><text x="65" y="102" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#396c9c">in</text>
+  <rect x="93" y="86" width="451" height="23" rx="11" fill="#eef1f5"/><text x="111" y="102" font-family="Arial" font-size="9" fill="#8994a2">Search articles and profiles</text>
+  <text x="744" y="101" font-family="Arial" font-size="10" fill="#748196">ARTICLE PAGE · SAMPLE</text>
+  <rect x="52" y="144" width="528" height="335" rx="10" fill="#fff" stroke="#e5e9ef"/>
+  <text x="79" y="181" font-family="Arial" font-size="10" font-weight="700" letter-spacing="1.2" fill="#7a8798">ARTICLE</text>
+  <text x="79" y="219" font-family="Arial" font-size="23" font-weight="700" fill="#243247">A collection of useful resources</text>
+  <circle cx="91" cy="249" r="12" fill="#dbe7ef"/><text x="114" y="246" font-family="Arial" font-size="10" fill="#506074">Article author</text><text x="114" y="261" font-family="Arial" font-size="8" fill="#9aa4b1">Public page · illustrative</text>
+  <g stroke="#dce2e9" stroke-width="7" stroke-linecap="round"><path d="M80 296h442M80 321h416M80 346h428M80 371h386"/></g>
+  <rect x="80" y="399" width="222" height="39" rx="7" fill="#f2f6fa"/><text x="98" y="423" font-family="Arial" font-size="10" fill="#66809b">Article link · captured</text>
+  <rect x="602" y="144" width="345" height="335" rx="10" fill="#18263a"/>
+  <rect x="622" y="163" width="36" height="36" rx="10" fill="#283d57" stroke="#9a79e8"/><path d="M633 181h14m-7-7 7 7-7 7" fill="none" stroke="#c4a9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="671" y="179" font-family="Arial" font-size="13" font-weight="700" fill="#f5f7fb">Collected links</text><text x="671" y="194" font-family="Arial" font-size="9" fill="#9cacbf">Extension panel · sample data</text>
+  <g font-family="Arial"><rect x="622" y="216" width="304" height="51" rx="8" fill="#22334a"/><circle cx="641" cy="241" r="7" fill="#4b83be"/><text x="658" y="238" font-size="10" fill="#e8eef6">Article URL</text><text x="658" y="253" font-size="8" fill="#93a4b8">example.com/article</text>
+  <rect x="622" y="276" width="304" height="51" rx="8" fill="#22334a"/><circle cx="641" cy="301" r="7" fill="#4b83be"/><text x="658" y="298" font-size="10" fill="#e8eef6">Profile URL</text><text x="658" y="313" font-size="8" fill="#93a4b8">example.com/profile</text>
+  <rect x="622" y="336" width="304" height="51" rx="8" fill="#22334a"/><circle cx="641" cy="361" r="7" fill="#4b83be"/><text x="658" y="358" font-size="10" fill="#e8eef6">Related article</text><text x="658" y="373" font-size="8" fill="#93a4b8">example.com/resource</text>
+  <rect x="622" y="405" width="304" height="43" rx="8" fill="#8066d9"/><path d="M648 417v17m-7-7 7 7 7-7" fill="none" stroke="#fff" stroke-width="1.5"/><text x="783" y="432" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Export links · CSV</text></g>
+  <text x="500" y="540" text-anchor="middle" font-family="Arial" font-size="9" letter-spacing="1.3" fill="#7c8b9c">ILLUSTRATIVE · SYNTHETIC URLS · NO REAL PROFILE DATA</text>
+</svg>

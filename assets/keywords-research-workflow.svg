@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative keyword research and export workflow</title>
+  <desc id="desc">Synthetic search-results research table with keyword insights and a CSV export action, representing the Premium Keywords Wizard extension.</desc>
+  <rect width="1000" height="560" rx="25" fill="#f1f2f8"/>
+  <rect width="1000" height="50" rx="25" fill="#fff"/>
+  <circle cx="25" cy="25" r="6" fill="#f27872"/><circle cx="44" cy="25" r="6" fill="#efbf62"/><circle cx="63" cy="25" r="6" fill="#60be8c"/>
+  <rect x="324" y="14" width="352" height="22" rx="11" fill="#f4f5f8"/>
+  <text x="500" y="29" text-anchor="middle" font-family="Arial" font-size="10" fill="#8994a4">PREMIUM KEYWORDS WIZARD · ILLUSTRATIVE</text>
+  <rect x="28" y="72" width="944" height="440" rx="15" fill="#fff" stroke="#e2e5ed"/>
+  <text x="58" y="111" font-family="Arial" font-size="11" font-weight="700" letter-spacing="1.3" fill="#7a719e">SERP RESEARCH / KEYWORD INSIGHTS</text>
+  <text x="58" y="150" font-family="Arial" font-size="26" font-weight="700" fill="#26233f">Research workspace</text>
+  <rect x="58" y="170" width="640" height="43" rx="8" fill="#f8f8fc" stroke="#e6e5ef"/><circle cx="80" cy="191" r="7" fill="none" stroke="#9289b4" stroke-width="2"/><path d="m85 196 6 6" stroke="#9289b4" stroke-width="2"/><text x="104" y="196" font-family="Arial" font-size="11" fill="#8e8ba0">Search results · keyword data</text>
+  <rect x="714" y="170" width="229" height="43" rx="8" fill="#6655c7"/><path d="M744 183v16m-7-7 7 7 7-7" fill="none" stroke="#fff" stroke-width="1.7"/><text x="831" y="196" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#fff">Export keyword data</text>
+  <rect x="58" y="235" width="608" height="240" rx="11" fill="#fff" stroke="#e6e7ee"/>
+  <rect x="58" y="235" width="608" height="40" rx="11" fill="#f7f7fb"/>
+  <g font-family="Arial" font-size="9" font-weight="700" fill="#7b7891"><text x="79" y="260">SEARCH TERM</text><text x="328" y="260">INTENT</text><text x="445" y="260">RESULTS</text><text x="555" y="260">ACTION</text></g>
+  <g font-family="Arial" font-size="10" fill="#354055"><rect x="58" y="275" width="608" height="49" fill="#fff"/><text x="79" y="304">Example keyword 01</text><text x="328" y="304">Informational</text><text x="445" y="304">SERP data</text><rect x="555" y="288" width="73" height="23" rx="11" fill="#f1effb"/><text x="591" y="303" text-anchor="middle" fill="#6655c7">Saved</text>
+  <rect x="58" y="324" width="608" height="49" fill="#fafafd"/><text x="79" y="353">Example keyword 02</text><text x="328" y="353">Commercial</text><text x="445" y="353">SERP data</text><rect x="555" y="337" width="73" height="23" rx="11" fill="#f1effb"/><text x="591" y="352" text-anchor="middle" fill="#6655c7">Saved</text>
+  <rect x="58" y="373" width="608" height="49" fill="#fff"/><text x="79" y="402">Example keyword 03</text><text x="328" y="402">Research</text><text x="445" y="402">SERP data</text><rect x="555" y="386" width="73" height="23" rx="11" fill="#f1effb"/><text x="591" y="401" text-anchor="middle" fill="#6655c7">Saved</text>
+  <rect x="58" y="422" width="608" height="49" fill="#fafafd"/><text x="79" y="451">Example keyword 04</text><text x="328" y="451">Informational</text><text x="445" y="451">SERP data</text><rect x="555" y="435" width="73" height="23" rx="11" fill="#f1effb"/><text x="591" y="450" text-anchor="middle" fill="#6655c7">Saved</text></g>
+  <rect x="687" y="235" width="256" height="240" rx="11" fill="#f8f7fc" stroke="#e6e3f0"/>
+  <text x="711" y="269" font-family="Arial" font-size="13" font-weight="700" fill="#302b49">Research snapshot</text>
+  <g font-family="Arial"><text x="711" y="307" font-size="10" fill="#858198">Captured results</text><text x="917" y="307" text-anchor="end" font-size="11" font-weight="700" fill="#463c83">Structured</text><path d="M711 321h207" stroke="#e5e2ee"/><text x="711" y="351" font-size="10" fill="#858198">Keyword dataset</text><text x="917" y="351" text-anchor="end" font-size="11" font-weight="700" fill="#463c83">Export ready</text><path d="M711 365h207" stroke="#e5e2ee"/><rect x="711" y="390" width="207" height="48" rx="8" fill="#eeeafa"/><text x="814" y="410" text-anchor="middle" font-size="10" font-weight="700" fill="#5d50aa">CSV · ORGANIZED FOR PLANNING</text><text x="814" y="426" text-anchor="middle" font-size="8" fill="#8178aa">Illustrative preview</text></g>
+  <text x="500" y="540" text-anchor="middle" font-family="Arial" font-size="9" letter-spacing="1.3" fill="#827e95">SYNTHETIC KEYWORD EXAMPLES · ILLUSTRATIVE RESEARCH WORKFLOW</text>
+</svg>
