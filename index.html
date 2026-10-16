@@ -1700,7 +1700,7 @@
 
     .top {
       position: fixed;
-      z-index: 35;
+      z-index: 75;
       right: 20px;
       bottom: 20px;
       width: 43px;
@@ -1711,8 +1711,8 @@
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
-      transform: translateY(7px);
-      transition: opacity .2s, transform .2s, color .2s, border-color .2s
+      transform: none;
+      transition: color .2s, border-color .2s
     }
 
     .top.visible {
@@ -2041,7 +2041,12 @@
       bottom: 20px;
       display: grid;
       justify-items: end;
-      gap: 10px
+      gap: 10px;
+      pointer-events: none
+    }
+
+    .portfolio-guide > * {
+      pointer-events: auto
     }
 
     .guide-greeting {
@@ -3478,15 +3483,6 @@
     }
 
 
-    /* Keep fixed chat/back-to-top controls clear of footer navigation. */
-    .portfolio-guide.footer-nearby {
-      bottom: 118px
-    }
-
-    .top.footer-nearby {
-      bottom: 118px
-    }
-
     .footer-links a {
       position: relative;
       display: inline-flex;
@@ -3506,6 +3502,20 @@
       border-radius: 2px
     }
 
+    .footer-links {
+      position: relative;
+      z-index: 80
+    }
+
+    .top.footer-nearby,
+    .portfolio-guide.footer-nearby {
+      bottom: 118px
+    }
+
+    footer {
+      position: relative;
+      z-index: 80
+    }
   </style>
   <script
     type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ankita Katoch","jobTitle":"Full Stack Engineer","url":"https://ankitakatoch612.github.io/Portfolio/","sameAs":["https://linkedin.com/in/ankita-katoch-7908b8217","https://github.com/AnkitaKatoch612"],"knowsAbout":["JavaScript","React","Node.js","Express.js","MongoDB","REST APIs","TypeScript"]}</script>
@@ -4194,7 +4204,7 @@
       else phoneImage.addEventListener('load', updatePhonePreview, { once: true });
     }
     const nav = document.getElementById('navLinks'), menu = document.getElementById('menuToggle'); menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation') }); nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false') }));
-    const progress = document.getElementById('progress'), topButton = document.getElementById('backTop'); function updateScroll() { const max = document.documentElement.scrollHeight - innerHeight; progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%'; topButton.classList.toggle('visible', scrollY > 500) } addEventListener('scroll', updateScroll, { passive: true }); updateScroll(); if (canObserve) { const footerDock = new IntersectionObserver(entries => { const visible = entries[0].isIntersecting; document.querySelector('.portfolio-guide').classList.toggle('footer-nearby', visible); topButton.classList.toggle('footer-nearby', visible) }); footerDock.observe(document.querySelector('footer')) } topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' }));
+    const progress = document.getElementById('progress'), topButton = document.getElementById('backTop'), footer = document.querySelector('footer'), portfolioGuide = document.querySelector('.portfolio-guide'); function updateScroll() { const max = document.documentElement.scrollHeight - innerHeight; progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%'; const footerNearby = footer.getBoundingClientRect().top < innerHeight + 24; topButton.classList.toggle('visible', scrollY > 500); topButton.classList.toggle('footer-nearby', footerNearby); portfolioGuide.classList.toggle('footer-nearby', footerNearby) } addEventListener('scroll', updateScroll, { passive: true }); addEventListener('resize', updateScroll); updateScroll(); topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' }));
     if (canObserve) { const reveals = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); reveals.unobserve(entry.target) } }), { threshold: .1 }); document.querySelectorAll('.reveal').forEach(el => reveals.observe(el)); const visibleSections = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle('is-visible', entry.isIntersecting)), { rootMargin: '60px' }); document.querySelectorAll('.systems').forEach(el => visibleSections.observe(el)); const navSections = [...document.querySelectorAll('main section[id]')]; let navUpdateFrame = 0; function updateActiveNav() { navUpdateFrame = 0; const marker = innerHeight * .3; let activeSection = navSections[0]; for (const section of navSections) { if (section.getBoundingClientRect().top <= marker) activeSection = section; else break } if (scrollY + innerHeight >= document.documentElement.scrollHeight - 2) activeSection = navSections[navSections.length - 1]; nav.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.hash === '#' + activeSection.id)) } function scheduleActiveNav() { if (!navUpdateFrame) navUpdateFrame = requestAnimationFrame(updateActiveNav) } addEventListener('scroll', scheduleActiveNav, { passive: true }); addEventListener('resize', scheduleActiveNav); updateActiveNav() } else document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
     const filterButtons = document.querySelectorAll('.filter'), projectCards = [...document.querySelectorAll('.project-card')]; filterButtons.forEach(button => button.addEventListener('click', () => { filterButtons.forEach(item => item.setAttribute('aria-pressed', 'false')); button.setAttribute('aria-pressed', 'true'); const category = button.dataset.filter; projectCards.forEach(card => { const show = category === 'all' || card.dataset.categories.split(' ').includes(category); if (!show) { card.classList.add('filter-out'); setTimeout(() => { if (card.classList.contains('filter-out')) card.hidden = true }, prefersReduced ? 0 : 180) } else { card.hidden = false; card.classList.remove('filter-out') } }) }));
     const dialog = document.getElementById('projectDialog'), modalTitle = document.getElementById('modalTitle'), modalEyebrow = document.getElementById('modalEyebrow'), modalBody = document.getElementById('modalBody'); function openProject(key) { const data = projects[key]; if (!data) return; modalTitle.textContent = data.title; modalEyebrow.textContent = data.kind; modalBody.replaceChildren(); const summary = document.createElement('p'); summary.className = 'modal-summary'; summary.textContent = data.summary; modalBody.append(summary); data.sections.forEach(([heading, copy]) => { const section = document.createElement('section'); section.className = 'modal-section'; const title = document.createElement('h3'); title.textContent = heading; const text = document.createElement('p'); text.textContent = copy; section.append(title, text); modalBody.append(section) }); dialog.showModal() } projectCards.forEach(card => card.addEventListener('click', event => { if (event.target.closest('a,button')) return; openProject(card.dataset.project) })); document.querySelectorAll('[data-open-project]').forEach(button => button.addEventListener('click', () => openProject(button.dataset.openProject))); document.getElementById('modalClose').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close() });
